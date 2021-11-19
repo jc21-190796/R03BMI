@@ -18,7 +18,56 @@ namespace R03BMI
 
         private void Button_Clicked(object sender, EventArgs e)
         {
+            string height=height.Text;
+            string weight=weight.Text;
 
+            try
+            {
+                double h=double.Parse(height);
+                double w=double.Parse(weight);
+                if (height>3)
+                {
+                    height=height/100
+                }
+
+                if (weight > 400)
+                {
+                    weight=weight/1000
+                }
+
+                double bmi=w/h/h
+
+                if (bmi < 18.5)
+                {
+                    result.Text=bmi+"(低体重)";
+                }
+                else if (bmi < 25)
+                {
+                    result.Text=bmi+"(普通体重)";
+                }
+                else if (bmi < 30)
+                {
+                    result.Text=bmi+"(肥満（１度）)";
+                }
+                else if (bmi < 35)
+                {
+                    result.Text=bmi+"(肥満（２度）)";
+                }
+                else if (bmi < 40)
+                {
+                    result.Text=bmi+"(肥満（３度）)";
+                }
+                else
+                {
+                    result.Text=bmi+"(肥満（４度）)";
+                }
+            }
+            catch
+            {
+                Console.WriteLine(ex);
+                result.Text="error"
+            }
+            
         }
     }
 }
