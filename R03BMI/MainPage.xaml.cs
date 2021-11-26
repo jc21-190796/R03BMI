@@ -25,12 +25,12 @@ namespace R03BMI
             {
                 double h=double.Parse(height);
                 double w=double.Parse(weight);
-                if (height>3)
+                if (h>3)
                 {
                     height=height/100;
                 }
 
-                if (weight > 400)
+                if (w>400)
                 {
                     weight=weight/1000;
                 }
@@ -64,7 +64,7 @@ namespace R03BMI
             }
             catch
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(Exception);
                 result.Text="error";
             }
             
