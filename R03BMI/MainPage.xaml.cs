@@ -62,7 +62,7 @@ namespace R03BMI
                     result.Text="BMI"+bmi+"(肥満（４度）)";
                 }
             }
-            catch(Exception)
+            catch(FormatException ex)
             {
                 Console.WriteLine(ex);
                 result.Text="error";
