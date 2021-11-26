@@ -27,12 +27,12 @@ namespace R03BMI
                 double w=double.Parse(weight);
                 if (h>3)
                 {
-                    height=height/100;
+                    h=h/100;
                 }
 
                 if (w>400)
                 {
-                    weight=weight/1000;
+                    w=w/1000;
                 }
 
                 double bmi=Math.Round(w/(h*h),1);
@@ -62,9 +62,9 @@ namespace R03BMI
                     result.Text="BMI"+bmi+"(肥満（４度）)";
                 }
             }
-            catch
+            catch(Exception)
             {
-                Console.WriteLine(Exception);
+                Console.WriteLine(ex);
                 result.Text="error";
             }
             
